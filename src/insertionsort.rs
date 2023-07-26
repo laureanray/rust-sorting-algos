@@ -1,9 +1,9 @@
 use super::Sorter;
 
-pub struct Insertionsort;
+pub struct InsertionSort;
 
 // A really stupid sort
-impl Sorter for Insertionsort {
+impl Sorter for InsertionSort {
     fn sort<T>(slice: &mut [T])
     where
         T: Ord,
