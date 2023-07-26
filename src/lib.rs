@@ -1,4 +1,5 @@
 mod bubblesort;
+mod insertionsort;
 
 pub trait Sorter {
     fn sort<T>(slice: &mut [T])
@@ -32,7 +33,7 @@ mod tests {
 
     fn it_works() {
         let mut things = vec![4, 2, 3, 1];
-        sort::<_, StdSorter>(&mut things);
+        StdSorter::sort(&mut things);
         assert_eq!(things, &[1, 2, 3, 4]);
     }
 }
