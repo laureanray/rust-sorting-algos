@@ -1,4 +1,5 @@
 mod bubblesort;
+mod selectionsort;
 mod insertionsort;
 
 pub trait Sorter {

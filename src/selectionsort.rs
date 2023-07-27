@@ -12,15 +12,10 @@ impl Sorter for SelectionSort {
                 .iter()
                 .enumerate()
                 .min_by_key(|&(_, v)| v)
+                //.min_by_key(|(_, v)| v)
                 .expect("slice is non-empty");
 
-            // or
-            let mut smallest_in_rest = unsorted;
-            for i in (unsorted + 1)..slice.len() {
-                if slice[i] < slice[smallest_in_rest] {
-                    smallest_in_rest = i;
-                }
-            }
+            let smallest_in_rest = unsorted + smallest_in_rest;
 
             if unsorted != smallest_in_rest {
                 slice.swap(unsorted, smallest_in_rest);
