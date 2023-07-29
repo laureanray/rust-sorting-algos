@@ -1,13 +1,19 @@
 mod bubblesort;
-mod selectionsort;
 mod insertionsort;
-mod  quicksort;
+mod quicksort;
+mod selectionsort;
 
 pub trait Sorter {
     fn sort<T>(&self, slice: &mut [T])
     where
         T: Ord;
 }
+
+pub use bubblesort::BubbleSort;
+pub use quicksort::QuickSort;
+pub use insertionsort::InsertionSort;
+pub use selectionsort::SelectionSort;
+
 #[cfg(test)]
 mod tests {
     use super::*;
